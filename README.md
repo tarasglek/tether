@@ -1,3 +1,7 @@
+On verizon one just has to lower the default ttl by 1.
+
+On T-mobile, they do some fancier stuff. There it's good to tether to phone, then run socat udp proxy on the phone for connections to identify as initiated from phone.
+
 ```
 adb forward tcp:8022 tcp:8022
 #on phone
