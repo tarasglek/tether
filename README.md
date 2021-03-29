@@ -14,4 +14,9 @@ socat -v udp-listen:5000,reuseaddr,fork tcp:wireguard:5000
 socat -v  udp-listen:5000,reuseaddr udp4-sendto:wireguard:5000,sourceport=9000
 
 socat udp-listen:5000,reuseaddr exec:./ssh.sh
+socat -v udp-listen:5000,reuseaddr tcp:localhost:5000
+
+socat   udp-listen:5000,reuseaddr udp4-sendto:192.168.43.1:5000,sourceport=9000
+
+ssh 192.168.43.1 -p 8022 socat  udp-listen:5000,reuseaddr udp4-sendto:summit.glek.net:5000,sourceport=9000
 ```
